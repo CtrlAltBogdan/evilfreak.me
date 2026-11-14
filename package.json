@@ -1,0 +1,27 @@
+{
+  "name": "evilfreak-me",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build && node scripts/build-static-routes.mjs",
+    "preview": "vite preview",
+    "assets": ".venv/bin/python scripts/assets/build_assets.py",
+    "process:assets": "npm run assets"
+  },
+  "dependencies": {
+    "react": "latest",
+    "react-dom": "latest",
+    "lucide-react": "latest"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "latest",
+    "@vitejs/plugin-react": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "tailwindcss": "latest",
+    "typescript": "latest",
+    "vite": "latest"
+  }
+}
