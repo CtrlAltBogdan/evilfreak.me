@@ -1,20 +1,23 @@
 import { useState } from 'react'
 import type { LucideIcon } from 'lucide-react'
 import { ArrowUpRight } from 'lucide-react'
+import { trackEvent } from '../../lib/analytics'
 
 type ContactLinkProps = {
   label: string
   value: string
   href?: string
   copyValue?: string
+  eventName?: string
   icon: LucideIcon
 }
 
-export function ContactLink({ label, value, href, copyValue, icon: Icon }: ContactLinkProps) {
+export function ContactLink({ label, value, href, copyValue, eventName, icon: Icon }: ContactLinkProps) {
   const [copied, setCopied] = useState(false)
 
   if (copyValue) {
     const copy = async () => {
+      if (eventName) void trackEvent(eventName)
       await navigator.clipboard.writeText(copyValue)
       setCopied(true)
       window.setTimeout(() => setCopied(false), 1600)
@@ -23,5 +26,5 @@ export function ContactLink({ label, value, href, copyValue, icon: Icon }: Conta
     return <button type="button" className="contact-link" onClick={copy} aria-label={`Copy Discord username ${copyValue}`}><Icon /><b>{label}</b><small>{value}</small><span aria-live="polite">{copied ? 'Copied' : 'Copy'}</span></button>
   }
 
-  return <a className="contact-link" href={href} target={href?.startsWith('http') ? '_blank' : undefined} rel="noreferrer"><Icon /><b>{label}</b><small>{value}</small><ArrowUpRight /></a>
+  return <a className="contact-link" href={href} target={href?.startsWith('http') ? '_blank' : undefined} rel="noreferrer" onClick={() => eventName && void trackEvent(eventName)}><Icon /><b>{label}</b><small>{value}</small><ArrowUpRight /></a>
 }

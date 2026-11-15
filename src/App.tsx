@@ -9,6 +9,7 @@ import { Finale } from './sections/Finale/Finale'
 import { Encore } from './sections/Encore/Encore'
 import { AnonixCaseStudy } from './pages/AnonixCaseStudy'
 import { appRoute } from './config/paths'
+import { Analytics } from './components/community/Analytics'
 
 export function App() {
   useEffect(() => {
@@ -19,6 +20,6 @@ export function App() {
     return () => observer.disconnect()
   }, [])
 
-  if (appRoute() === '/projects/anonix') return <AnonixCaseStudy />
-  return <><Navigation /><main id="main"><Hero /><ActOne /><ActTwo /><ActThree /><ActFour /><Finale /><Encore /></main></>
+  if (appRoute() === '/projects/anonix') return <><Analytics /><AnonixCaseStudy /></>
+  return <><Analytics /><Navigation /><main id="main"><Hero /><ActOne /><ActTwo /><ActThree /><ActFour /><Finale /><Encore /></main></>
 }

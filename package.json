@@ -11,15 +11,16 @@
     "process:assets": "npm run assets"
   },
   "dependencies": {
+    "@giscus/react": "^3.1.0",
+    "lucide-react": "latest",
     "react": "latest",
-    "react-dom": "latest",
-    "lucide-react": "latest"
+    "react-dom": "latest"
   },
   "devDependencies": {
     "@tailwindcss/vite": "latest",
-    "@vitejs/plugin-react": "latest",
     "@types/react": "latest",
     "@types/react-dom": "latest",
+    "@vitejs/plugin-react": "latest",
     "tailwindcss": "latest",
     "typescript": "latest",
     "vite": "latest"
