@@ -19,8 +19,8 @@ export function PortfolioComments() {
           repoId={giscus.repoId}
           category={giscus.category}
           categoryId={giscus.categoryId}
-          mapping="specific"
-          term={giscus.term}
+          mapping="number"
+          term={giscus.discussionNumber}
           strict="1"
           reactionsEnabled="1"
           emitMetadata="0"

@@ -9,6 +9,6 @@ export const community = {
     repoId: 'R_kgDOVutnag',
     category: 'Portfolio',
     categoryId: 'DIC_kwDOVutnas4DLKDO',
-    term: 'Portfolio feedback',
+    discussionNumber: '1',
   },
 } as const
